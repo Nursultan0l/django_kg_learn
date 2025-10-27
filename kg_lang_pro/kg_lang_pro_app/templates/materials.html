@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}МАТЕРИАЛДАР{% endblock%}
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'css/style_pages/materials.css' %}">
+{% endblock %}
+
+{% block content%}
+<div class="container_materials">
+    <div class="container_grid">
+        {% for material in materials_ls %}
+        <div class="materials_file">
+            <div class="material_text_description">
+                <div class="title_material_file">
+                    {{ material.title}}
+                </div>
+                <div class="description_material_file">
+                    {{ material.description}}
+                </div>
+            </div>
+            <div class="material_icon_button">
+                <div class="icon_material">
+                    <ion-icon name="document"></ion-icon>
+                </div>
+                <a href="{{ material.document.url}}" download="lessons_materials_kg" class="download_file"><ion-icon name="download"></ion-icon></a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock%}

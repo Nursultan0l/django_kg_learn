@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}ТЕОРИЯ{% endblock%}
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'css/style_pages/grammar.css' %}">
+{% endblock %}
+
+{% block content%}
+<div class="container_grammar">
+    {% for lesson in lessons_ls %}
+    <div class="container_grammar_block lesson-block">
+        <div class="title_grammar">{{ lesson.title }}</div>
+
+        <div class="button_grammar open-btn" onclick="openGrammar(this); return false;">
+            <ion-icon name="arrow-down-outline"></ion-icon>
+        </div>
+
+        <div class="button_grammar hidden close-btn" onclick="closeGrammar(this); return false;">
+            <ion-icon name="arrow-up-outline"></ion-icon>
+        </div>
+
+
+    </div>
+    <div class="grammar_description hidden">
+        {{ lesson.description }}
+    </div>
+    {% endfor %}
+
+</div>
+<script src="{% static 'js/grammar.js'%}"></script>
+{% endblock%}

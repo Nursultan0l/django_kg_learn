@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learning language">
+    <meta name="keywords" content="Learning language">
+    <meta name="robots" content="index, follow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+    <title>{% block title%}KG{% endblock%}</title>
+    {% block extra_head %} {% endblock %}
+</head>
+<body>
+<div class="container">
+    <header>
+        <div class="header_logo">
+            <div class="logo">
+                <img class="logo_img"
+                     src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Emblem_of_Kyrgyzstan.svg/1024px-Emblem_of_Kyrgyzstan.svg.png"
+                     alt="KG">
+            </div>
+            <div class="logo_title">KG Learn</div>
+        </div>
+        {% if user.is_authenticated%}
+        <div class="nav">
+            <ul>
+                <li style="--i:1"><a class="{% if request.path == '/' %}active{% endif %}" href="{% url 'home'%}">НЕГИЗГИ
+                    БЕТ</a></li>
+                <li style="--i:2"><a
+                        class="{% if request.path == '/lessons/' or request.path == '/lessons/alphabet/' or request.path == '/lessons/numbers/' %}active{% endif %}"
+                        href="{% url 'lessons'%}">ЖАҢЫДАН БАШТОО</a></li>
+                <li style="--i:3"><a class="{% if request.path == '/grammar/' %}active{% endif %}"
+                                     href="{% url 'grammar'%}">ТЕОРИЯ БӨЛҮМҮ</a></li>
+                <li style="--i:4"><a class="{% if request.path == '/materials/' %}active{% endif %}"
+                                     href="{% url 'materials'%}">МАТЕРИАЛДАР</a></li>
+            </ul>
+        </div>
+        {% endif %}
+
+        <div class="button_icon_container">
+            {% if user.is_authenticated %}
+            <div class="profile_img button_icon" onclick="openNav(); return false">
+                {% if user.image %}
+                <img src="{{ user.image.url }}" alt="Сүрөтүңүз" class="profile-image">
+                {% else %}
+                <img src="https://t4.ftcdn.net/jpg/00/65/77/27/240_F_65772719_A1UV5kLi5nCEWI0BNLLiFaBPEkUbv5Fv.jpg"
+                     alt="">
+                {% endif %}
+            </div>
+            {% else %}
+            <a class="button_icon" href="{% url 'login' %}">
+                <ion-icon name="person"></ion-icon>
+            </a>
+            {% endif %}
+
+        </div>
+    </header>
+    <div class="my_menu_right_black_back" id="my_menu_back"></div>
+    <div class="my_menu_right" id="myNav">
+        <div class="menu-header">
+            <div class="menu_right_header">
+                <div class="text_menu_right">
+                    <div class="profile_img">
+                        {% if user.image %}
+                        <img src="{{ user.image.url }}" alt="Сүрөтүңүз" class="profile-image">
+                        {% else %}
+                        <img src="https://t4.ftcdn.net/jpg/00/65/77/27/240_F_65772719_A1UV5kLi5nCEWI0BNLLiFaBPEkUbv5Fv.jpg"
+                             alt="">
+                        {% endif %}
+                    </div>
+                    <div class="user_name">
+                        {{ user.username}}
+                    </div>
+                </div>
+                <div class="exit_menu_right">
+                    <div class="exit_menu_right2" onclick="openBar(); return false">
+                        <ion-icon name="pencil"></ion-icon>
+                    </div>
+                    <div class="exit_menu_right2"><a href="{% url 'logout' %}">
+                        <ion-icon name="exit"></ion-icon>
+                    </a></div>
+                    <div class="exit_menu_right2" onclick="closeNav(); return false">
+                        <ion-icon name="close"></ion-icon>
+                    </div>
+                </div>
+            </div>
+            <div class="menu_right_container" id="myNavCreate">
+                <a class="menu-content" href="{% url 'home'%}">НЕГИЗГИ БЕТ</a>
+                <a class="menu-content" href="{% url 'lessons'%}">ЖАҢЫДАН БАШТОО</a>
+                <a class="menu-content" href="{% url 'grammar'%}">ТЕОРИЯ БӨЛҮМҮ</a>
+                <a class="menu-content" href="{% url 'materials'%}">МАТЕРИАЛДАР</a>
+            </div>
+            <div class="menu_right_container2" id="myNavCreateOpen">
+                <div class="form_menu">
+                    <form method="post" action="{% url 'edit_profile' %}" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="inputs_elements_text">Жеке маалыматтарды өзгортүү</div>
+                        <div class="inputs">
+                            <div class="inputs_elements">
+                                <input type="text" name="username" value="{{ user.username }}" placeholder="Атыңыз">
+                            </div>
+                            <div class="inputs_elements">
+                                <input type="email" name="email" value="{{ user.email }}" placeholder="Почтаңыз">
+                            </div>
+                            <div class="inputs_elements_foto">
+                                <div class="profile_img">
+                                    {% if user.image %}
+                                    <img src="{{ user.image.url }}" alt="Сүрөтүңүз" class="profile-image">
+                                    {% else %}
+                                    <img src="https://t4.ftcdn.net/jpg/00/65/77/27/240_F_65772719_A1UV5kLi5nCEWI0BNLLiFaBPEkUbv5Fv.jpg"
+                                         alt="">
+                                    {% endif %}
+                                </div>
+                                <label class="file-label">
+                                    Выберите файл
+                                    <input type="file" name="image" class="file-input">
+                                </label>
+                            </div>
+
+                            <button class="button_save" type="submit">Сактоо</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <main>
+        {% block content%}
+
+        {% endblock%}
+    </main>
+    <footer>
+        <div class="footer_container">
+            <div class="text_footer">Кыргыз тилин үйрөнүү</div>
+            <div class="logo">
+                <img class="logo_img"
+                     src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Emblem_of_Kyrgyzstan.svg/1024px-Emblem_of_Kyrgyzstan.svg.png"
+                     alt="KG">
+            </div>
+            <div class="text_footer">© 2025 Nurs. Все права защищены.</div>
+        </div>
+    </footer>
+</div>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script src="{% static 'js/script.js'%}"></script>
+</body>
+</html>

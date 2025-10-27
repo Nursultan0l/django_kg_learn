@@ -1,0 +1,86 @@
+.container_materials {
+    width: 100%;
+    height: 100%;
+    background: #3F0000;
+    margin: 10px 0 10px 0;
+}
+
+.container_grid {
+    width: 90%;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 20px;
+    padding: 20px;
+    margin: auto;
+}
+
+.materials_file {
+    border-radius: 10px;
+    box-shadow: 0 0 10px black;
+    margin: auto;
+    width: 400px;
+    background: #5D0000;
+    padding: 10px;
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.material_text_description {
+    width: 220px;
+    height: 100%;
+}
+
+.material_icon_button {
+    width: 120px;
+    height: 100%;
+}
+
+.title_material_file {
+    width: 100%;
+    height: 60px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 21px;
+    color: white;
+    padding: 10px 0;
+    font-weight: bold;
+}
+
+.description_material_file {
+    max-width: 350px;
+    color: white;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 17px;
+    margin: 5px 0 0 0;
+}
+
+.icon_material {
+    color: white;
+    font-size: 45px;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.download_file {
+    width: 100px;
+    height: 40px;
+    background: #a41515;
+    margin: 10px auto;
+    border-radius: 10px;
+    color: white;
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px black;
+    transition: 0.3s ease;
+}
+.download_file:hover{
+    background: #720d0d;
+}

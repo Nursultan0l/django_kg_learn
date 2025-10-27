@@ -1,0 +1,62 @@
+.container_grammar {
+    width: 96%;
+    margin: 10px auto;
+    height: 100%;
+    overflow: hidden;
+    background: #5D0000;
+    box-shadow: 0 0 10px black;
+    border-radius: 10px;
+}
+.container_grammar_block{
+    width: 98%;
+    height: 80px;
+    background: #3F0000;
+    margin: 20px auto;
+    box-shadow: 0 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.title_grammar{
+    padding: 20px;
+    font-size: 25px;
+    color: white;
+    font-family: "Playfair", serif;
+    height: 100%;
+    width: 90%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.button_grammar{
+    width: 80px;
+    height: 50px;
+    background: #a41515;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    color: white;
+    margin: 0 10px 0 0 ;
+    border-radius: 10px;
+    box-shadow: 0 0 10px black;
+    cursor: pointer;
+}
+
+.grammar_description{
+    width: 98%;
+    height: 100%;
+    background: #3F0000;
+    margin: 20px auto;
+    box-shadow: 0 0 10px black;
+    padding: 10px;
+    color: white;
+    font-size: 20px;
+    border-radius: 10px;
+    display: block;
+}
+
+
+.hidden {
+    display: none !important;
+}

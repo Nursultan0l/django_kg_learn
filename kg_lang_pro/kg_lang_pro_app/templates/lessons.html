@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}ЖАҢЫДАН БАШТОО{% endblock%}
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'css/style_pages/lessons.css' %}">
+{% endblock %}
+
+{% block content%}
+<div class="container_home1">
+    <div class="home_title_container">
+        <div class="home_title">АЛФАВИТТИ</div>
+        <div class="home_description">БИРГЕ ҮЙРӨНӨЛҮ !</div>
+        <div class="home_title_text">«Ар бир арип — тарыхый тамыр,<br>
+    Ар бир тыбыш — бабалар үну.<br>
+    Кыргыз ариптери — биздин <br> маданиятыбыздын ачкычы.»</div>
+        <div class="button_register_a"><a class="button_register2" href="{% url 'alphabet'%}" >БАШТОО</a></div>
+    </div>
+</div>
+<div class="container_home2">
+    <div class="home_title_container">
+        <div class="home_title">САНДАРДЫ</div>
+        <div class="home_description">БИРГЕ ҮЙРӨНӨЛҮ !</div>
+        <div class="home_title_text">«Сандар — бул дүйнөнүн тили,<br>
+    Кыргыз сандары — биздин салттык эсептөө.<br>
+    Бирден онго чейин — жаңы билимдер дүйнөсү.»</div>
+        <div class="button_register_a"><a class="button_register2" href="{% url 'numbers'%}" >БАШТОО</a></div>
+    </div>
+</div>
+{% endblock%}

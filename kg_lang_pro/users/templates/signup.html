@@ -1,0 +1,54 @@
+{% extends "base.html"%}
+{% load static%}
+{% block title %}Login{% endblock %}
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'css/style_pages/signup.css' %}">
+{% endblock %}
+{% block content %}
+<div class="form_container">
+
+    <form class="form_container_block" action="{% url 'signup'%}" method="post">
+        {% csrf_token %}
+        <div class="form_container_block2">
+            <div class="title_form">КАТТАЛУУ</div>
+            <div class="form-group">
+                <label for="signup_username"></label>
+                {{ form.username}}
+            </div>
+            <div class="form-group">
+                <label for="signup_email"></label>
+                {{ form.email }}
+            </div>
+            <div class="form-group">
+                <label for="signup_password1"></label>
+                {{ form.password1 }}
+            </div>
+            <div class="form-group">
+                <label for="signup_password2"></label>
+                {{ form.password2 }}
+            </div>
+            <div class="btn-submit-container">
+                <button type="submit" class="btn-submit">КАТТАЛУУ</button>
+            </div>
+            {% if form.errors %}
+            <div class="form-errors">
+                {% for field, errors in form.errors.items %}
+                {% for error in errors %}
+                {% if "This field is required" in error %}
+                <p>{{ field }} талаасы милдеттүү түрдө толтурулушу керек!</p>
+                {% elif "Enter a valid email address" in error %}
+                <p>Туура электрондук почтаны жазыңыз!</p>
+                {% else %}
+                <p>{{ error }}</p>
+                {% endif %}
+                {% endfor %}
+                {% endfor %}
+            </div>
+            {% endif %}
+
+            <div class="login_signup_text"><a href="{% url 'login'%}">КАТТАЛГАНСЫЗБЫ ?</a></div>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

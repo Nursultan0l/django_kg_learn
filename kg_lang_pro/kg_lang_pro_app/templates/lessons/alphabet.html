@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}АЛФАВИТ{% endblock %}
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'css/style_pages/lessons/alphabet.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="alphabet_container">
+    {% for letter in letters_ls %}
+    <div class="container_grid">
+        <div class="voice_alphabet">
+            <div class="letter_alphabet">{{ letter.title }}</div>
+
+            <div class="voice_letter">
+                <ion-icon name="caret-forward"></ion-icon>
+            </div>
+
+            <audio>
+                <source src="{{ letter.audio.url }}" type="audio/ogg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+
+        <div class="image_alphabet">
+            <img src="{{ letter.image.url }}" class="letter_images" alt="">
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+<script src="{% static 'js/alphabet.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}САНДАР{% endblock%}
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'css/style_pages/lessons/number.css' %}">
+{% endblock %}
+
+{% block content%}
+<div class="title_nums">0-9</div>
+<div class="alphabet_container">
+    {% for number in nums_0_9 %}
+    <div class="container_grid">
+        <div class="voice_alphabet">
+            <div class="letter_number">{{ number.title}}</div>
+
+            <div class="voice_number">
+                <ion-icon name="caret-forward"></ion-icon>
+            </div>
+
+            <audio>
+                <source src="{{ number.audio.url }}" type="audio/ogg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+
+        <div class="name_number">
+            {{ number.description }}
+        </div>
+
+    </div>
+    {% endfor %}
+</div>
+
+<div class="title_nums">10-90</div>
+<div class="alphabet_container">
+    {% for number in nums_10_90 %}
+    <div class="container_grid2">
+        <div class="voice_alphabet">
+            <div class="letter_number2 letter_number">{{ number.title}}</div>
+
+            <div class="voice_number">
+                <ion-icon name="caret-forward"></ion-icon>
+            </div>
+
+            <audio>
+                <source src="{{ number.audio.url }}" type="audio/ogg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+
+        <div class="name_number">
+            {{ number.description }}
+        </div>
+
+    </div>
+    {% endfor %}
+</div>
+
+<div class="title_nums">100-1000000000</div>
+<div class="alphabet_container3">
+    {% for number in nums_100_1000000000 %}
+    <div class="container_grid3">
+        <div class="voice_alphabet">
+            <div class="letter_number3 letter_number">{{ number.title}}</div>
+
+            <div class="voice_number">
+                <ion-icon name="caret-forward"></ion-icon>
+            </div>
+
+            <audio>
+                <source src="{{ number.audio.url }}" type="audio/ogg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+
+        <div class="name_number">
+            {{ number.description }}
+        </div>
+
+    </div>
+    {% endfor %}
+</div>
+
+<script src="{% static 'js/number.js' %}"></script>
+{% endblock%}
