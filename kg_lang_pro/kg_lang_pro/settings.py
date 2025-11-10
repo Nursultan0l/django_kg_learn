@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'kg_lang_pro_app',
     'users',
+    'api',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
