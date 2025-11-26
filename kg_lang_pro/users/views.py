@@ -89,16 +89,10 @@ def logout_view(request):
     return redirect('home')
 
 @login_required
-def profile(request):
-    return render(request, 'users/profile.html', {'user': request.user})
-
 def edit_profile(request):
     if request.method == 'POST':
         form = ProfileUpdateForm(request.POST, request.FILES, instance=request.user)
         if form.is_valid():
             form.save()
     return redirect(request.META.get('HTTP_REFERER', 'home'))
-
-
-
 
