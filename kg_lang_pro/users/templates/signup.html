@@ -3,30 +3,38 @@
 {% block title %}Login{% endblock %}
 {% block extra_head %}
 <link rel="stylesheet" href="{% static 'css/style_pages/signup.css' %}">
+<link rel="stylesheet" href="{% static 'js/register.js' %}">
 {% endblock %}
 {% block content %}
 <div class="form_container">
 
-    <form class="form_container_block" action="{% url 'signup'%}" method="post">
+    <form class="form_container_block" id="signupForm" method="post" action="{% url 'signup' %}">
         {% csrf_token %}
         <div class="form_container_block2">
             <div class="title_form">КАТТАЛУУ</div>
+
             <div class="form-group">
                 <label for="signup_username"></label>
-                {{ form.username}}
+                <input type="text" id="signup_username" name="username" class="form-control" placeholder="АТЫҢЫЗ">
             </div>
+
             <div class="form-group">
                 <label for="signup_email"></label>
-                {{ form.email }}
+                <input type="email" id="signup_email" name="email" class="form-control" placeholder="ПОЧТАҢЫЗ">
             </div>
+
             <div class="form-group">
                 <label for="signup_password1"></label>
-                {{ form.password1 }}
+                <input type="password" id="signup_password1" name="password1" class="form-control"
+                       placeholder="СЫР СӨЗҮҢҮЗ">
             </div>
+
             <div class="form-group">
                 <label for="signup_password2"></label>
-                {{ form.password2 }}
+                <input type="password" id="signup_password2" name="password2" class="form-control"
+                       placeholder="СЫР СӨЗҮҢҮЗДҮ КАЙТАЛАҢЫЗ">
             </div>
+
             <div class="btn-submit-container">
                 <button type="submit" class="btn-submit">КАТТАЛУУ</button>
             </div>
@@ -45,10 +53,10 @@
                 {% endfor %}
             </div>
             {% endif %}
-
-            <div class="login_signup_text"><a href="{% url 'login'%}">КАТТАЛГАНСЫЗБЫ ?</a></div>
-        </div>
+             <div class="login_signup_text"><a href="{% url 'login'%}">КАТТАЛГАНСЫЗБЫ ?</a></div>
+            </div>
     </form>
+
 </div>
 
 {% endblock %}

@@ -4,6 +4,6 @@ from django.contrib import admin
 from .models import *
 
 admin.site.register(Documents)
-admin.site.register(Lesson)
-admin.site.register(Letter)
+admin.site.register(Lessons)
+admin.site.register(Letters)
 admin.site.register(Numbers)

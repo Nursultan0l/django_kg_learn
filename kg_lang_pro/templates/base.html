@@ -53,7 +53,7 @@
                 {% endif %}
             </div>
             {% else %}
-            <a class="button_icon" href="{% url 'login' %}">
+            <a class="button_icon" href="{% url 'signup' %}">
                 <ion-icon name="person"></ion-icon>
             </a>
             {% endif %}
@@ -97,7 +97,7 @@
             </div>
             <div class="menu_right_container2" id="myNavCreateOpen">
                 <div class="form_menu">
-                    <form method="post" action="{% url 'edit_profile' %}" enctype="multipart/form-data">
+                    <form method="post" action="{% url 'profile' %}" enctype="multipart/form-data">
                         {% csrf_token %}
                         <div class="inputs_elements_text">Жеке маалыматтарды өзгортүү</div>
                         <div class="inputs">

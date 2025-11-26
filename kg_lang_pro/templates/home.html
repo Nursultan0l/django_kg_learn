@@ -12,11 +12,11 @@
         <div class="home_description">БИРГЕ ҮЙРӨНӨЛҮ !</div>
         <div class="home_title_text">«Тил — бул элдин жүрөгү.<br>Кыргыз тилин үйрөнүү — бул маданиятты түшүнүү.»</div>
         {% if user.is_authenticated %}
-        <div class="button_register_a"><a class="button_register" href="{% url 'login' %}" style="display: none">БАШТОО</a></div>
+        <div class="button_register_a"><a class="button_register" href="{% url 'signup' %}" style="display: none">БАШТОО</a></div>
         <div class="home_description_name"> Салам, &nbsp{{ user.username }} !</div>
         <div class="home_title_txt">Үйрөнүүнү азыр башта !</div>
         {% else %}
-        <div class="button_register_a"><a class="button_register" href="{% url 'login' %}">БАШТОО</a></div>
+        <div class="button_register_a"><a class="button_register" href="{% url 'signup' %}">БАШТОО</a></div>
         {% endif%}
     </div>
 </div>

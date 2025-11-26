@@ -23,17 +23,20 @@ class LoginForm(forms.Form):
             if '@' in username_or_email:
                 try:
                     user = User.objects.get(email=username_or_email)
-                    username = user.username
+                    # Аутентифицируем найденного пользователя
+                    if user.check_password(password):
+                        self.user_cache = user
+                    else:
+                        raise forms.ValidationError("Туура эмес сыр сөз")
                 except User.DoesNotExist:
                     raise forms.ValidationError("Бул почта табылган жок")
             else:
-                username = username_or_email
-
-            user = auth.authenticate(username=username, password=password)
-            if user:
-                self.user_cache = user
-            else:
-                raise forms.ValidationError("Туура эмес почта/аты же сыр сөз")
+                # Аутентифицируем по username
+                user = auth.authenticate(username=username_or_email, password=password)
+                if user:
+                    self.user_cache = user
+                else:
+                    raise forms.ValidationError("Туура эмес аты же сыр сөз")
 
         return self.cleaned_data
 
@@ -62,6 +65,10 @@ class RegistrationForm(UserCreationForm):
         model = User
         fields = ['username', 'email', 'password1', 'password2']
 
+    def clean(self):
+        cleaned_data = super().clean()
+        # Добавьте кастомные проверки если нужно
+        return cleaned_data
 class ProfileUpdateForm(forms.ModelForm):
     class Meta:
         model = User

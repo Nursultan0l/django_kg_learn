@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Lesson, Documents, Letter, Numbers
+from .models import Lessons, Documents, Letters, Numbers
 
 
 def home(request):
@@ -21,7 +21,7 @@ def materials(request):
     return render(request, 'materials.html')
 
 def lessons_list(request):
-    lessons_ls = Lesson.objects.all()
+    lessons_ls = Lessons.objects.all()
     return render(request, 'grammar.html', {'lessons_ls': lessons_ls})
 
 def materials_list(request):
@@ -29,7 +29,7 @@ def materials_list(request):
     return render(request, 'materials.html', {'materials_ls': materials_ls})
 
 def letters_list(request):
-    letters_ls = Letter.objects.all()
+    letters_ls = Letters.objects.all()
     return render(request, 'lessons/alphabet.html', {'letters_ls': letters_ls})
 
 
