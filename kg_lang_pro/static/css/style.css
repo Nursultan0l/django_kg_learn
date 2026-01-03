@@ -380,37 +380,54 @@ footer .text_footer {
         font-size: 16px;
         padding: 10px;
     }
-    .container{
+
+    .container {
         max-width: 480px;
     }
-    header{
+
+    header {
         height: 60px;
     }
-    .logo{
+
+    .logo {
         width: 40px;
         height: 40px;
     }
-    .logo_title{
+
+    .logo_title {
         font-size: 16px;
     }
-    .nav{
+
+    .nav {
         display: none;
     }
-    .profile_img{
+
+    .profile_img {
         width: 40px;
         height: 40px;
     }
-    footer{
-        height: 60px;
+
+
+    footer {
+        margin: 20px 0 0 0 !important;
+        min-height: auto;
+        height: 60px !important;
     }
-    footer .text_footer{
-        font-size: 9px;
-    }
-    .footer_container{
-        height: 100%;
+
+    .footer_container {
+        height: 60px !important;
         gap: 10px;
-        background: blue;
     }
+
+    footer .text_footer {
+        font-size: 9px !important;
+        font-weight: normal;
+    }
+
+    .footer_container .text_footer {
+        font-size: 9px !important;
+    }
+
 }
 
 

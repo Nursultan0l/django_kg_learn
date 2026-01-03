@@ -5,16 +5,19 @@
     align-items: center;
     justify-content: center;
 }
+
 .form_container_block {
     width: 700px;
     height: 570px;
 }
+
 .form_container_block2 {
     width: 100%;
     height: 100%;
     border-radius: 10px;
     background: #3F0000;
 }
+
 form {
     width: 100%;
     height: 100%;
@@ -69,7 +72,8 @@ input:focus {
     border-radius: 10px;
     box-shadow: 0 0 7px #760000;
 }
-.btn-submit:hover{
+
+.btn-submit:hover {
     background: #710505;
     color: #989898;
 }
@@ -81,18 +85,123 @@ input:focus {
     align-items: center;
     justify-content: center;
 }
-.login_signup_text{
+
+.login_signup_text {
     font-size: 15px;
     margin: 20px auto;
     color: white;
     text-align: center;
 }
-.login_signup_text a{
+
+.login_signup_text a {
     text-decoration: none;
     color: white;
 }
-.form-errors{
-     margin-top:10px ;
+
+.form-errors {
+    margin-top: 10px;
     color: white;
     text-align: center;
+}
+
+
+@media (max-width: 480px) {
+    .form_container {
+        width: 400px;
+        margin: auto;
+    }
+    .form_container_block {
+        width: 380px;
+        height: 440px;
+    }
+
+    .form_container_block2 {
+        width: 100%;
+        height: 100%;
+        border-radius: 5px;
+        background: #3F0000;
+    }
+
+
+    .title_form {
+        width: 100%;
+        height: 40px;
+        display: flex;
+        align-items: end;
+        justify-content: center;
+        font-size: 18px;
+        font-weight: bold;
+        color: white;
+    }
+
+    .form-group {
+        width: 100%;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 20px auto;
+    }
+
+    input {
+        width: 360px;
+        height: 100%;
+        text-align: center;
+        font-size: 15px;
+        border-radius: 5px;
+        border:none;
+    }
+
+    input::placeholder {
+        color: #aaa;
+        font-size: 15px;
+    }
+
+    input:focus {
+        border: none;
+        box-shadow: 0 0 5px #f20000;
+    }
+
+    .btn-submit {
+        width: 360px;
+        height: 50px;
+        border: none;
+        background: #a41515;
+        color: white;
+        font-size: 15px;
+        text-align: center;
+        border-radius: 5px;
+        box-shadow: 0 0 4px #760000;
+    }
+
+    .btn-submit:hover {
+        background: #710505;
+        color: #989898;
+    }
+
+    .btn-submit-container {
+        width: 100%;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .login_signup_text {
+        font-size: 13px;
+        margin: 20px auto;
+        color: white;
+        text-align: center;
+    }
+
+    .login_signup_text a {
+        text-decoration: none;
+        color: white;
+    }
+
+    .form-errors {
+        margin-top: 7px;
+        color: white;
+        text-align: center;
+    }
 }
