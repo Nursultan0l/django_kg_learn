@@ -5,6 +5,7 @@
     background: url("../../images/Group1.png");
     background-size: cover;
 }
+
 .container_home2 {
     margin-top: 10px;
     width: 100%;
@@ -20,7 +21,7 @@
 }
 
 .home_title {
-    font-family: "Playfair", serif;
+    font-family: "Poppins", serif;
     padding-top: 140px;
     font-size: 85px;
     font-weight: bold;
@@ -31,21 +32,21 @@
     font-size: 45px;
     font-weight: bold;
     color: white;
-    font-family: "Playfair", serif;
+    font-family: "Poppins", serif;
 }
 
 .home_title_text {
     padding-top: 40px;
     font-size: 25px;
     color: white;
-    font-family: "Playfair", serif;
+    font-family: "Poppins", serif;
 }
 
 .home_title_txt {
     padding-top: 10px;
     font-size: 30px;
     color: white;
-    font-family: "Playfair", serif;
+    font-family: "Poppins", serif;
 }
 
 .button_register2 {
@@ -67,26 +68,73 @@
     color: white;
     animation: pulseGlow 3s infinite ease;
 }
+
 @keyframes pulseGlow {
-  0% {
-    opacity: 0.5;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0.5;
-  }
+    0% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.5;
+    }
 }
 
-.button_register2:hover , .button_register:hover {
+.button_register2:hover, .button_register:hover {
     background: #5f0000;
     color: #878787;
     animation: none;
 }
-footer {
-    background: #a41515;
-    margin: 10px 0 0 0;
-    width: 100%;
-    height: 100px;
+
+
+@media (max-width: 480px) {
+    .container_home1 {
+        margin-top: 10px;
+        height: 260px;
+        background: url("../../images/Group11.png");
+        background-size: cover;
+    }
+
+    .container_home2 {
+        height: 260px;
+        background: url("../../images/Group22.png");
+         background-size: cover;
+    }
+
+    .home_title_container {
+        width: 100%;
+        height: 100%;
+        margin-left: 10px;
+    }
+
+    .home_title {
+        font-family: "Poppins", serif;
+        padding-top: 10px;
+        font-size: 40px;
+        padding-left: 10px;
+    }
+
+    .home_description {
+        font-size: 25px;
+        padding-left: 10px;
+    }
+
+    .home_title_text {
+        padding-top: 10px;
+        font-size: 16px;
+        padding-left: 10px;
+        width: 250px;
+    }
+
+    .button_register2 {
+        width: 100px;
+        height: 30px;
+        font-size: 12px;
+        border-radius: 5px;
+        margin: 20px 0 0 10px;
+        box-shadow: 0 0 5px #5D0000,
+    0 0 5px #5D0000,
+    0 0 5px #5D0000;
+    }
 }

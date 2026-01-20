@@ -1,7 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,10 +21,10 @@
         <div class="header_logo">
             <div class="logo">
                 <img class="logo_img"
-                     src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Emblem_of_Kyrgyzstan.svg/1024px-Emblem_of_Kyrgyzstan.svg.png"
-                     alt="KG">
+                     src="../static/images/logo.png"
+                     alt="Logo">
             </div>
-            <div class="logo_title">KG Learn</div>
+            <div class="logo_title">TILIM</div>
         </div>
         {% if user.is_authenticated%}
         <div class="nav">
@@ -100,7 +99,7 @@
                 <div class="form_menu">
                     <form method="post" action="{% url 'edit_profile' %}" enctype="multipart/form-data">
                         {% csrf_token %}
-                        <div class="inputs_elements_text">Жеке маалыматтарды өзгортүү</div>
+                        <div class="inputs_elements_text">Жеке маалыматтарды өзгөртүү</div>
                         <div class="inputs">
                             <div class="inputs_elements">
                                 <input type="text" name="username" value="{{ user.username }}" placeholder="Атыңыз">
@@ -118,7 +117,7 @@
                                     {% endif %}
                                 </div>
                                 <label class="file-label">
-                                    Выберите файл
+                                    Сүрөт тандаңыз
                                     <input type="file" name="image" class="file-input">
                                 </label>
                             </div>
@@ -138,15 +137,7 @@
         {% endblock%}
     </main>
     <footer>
-        <div class="footer_container">
-            <div class="text_footer">Кыргыз тилин үйрөнүү</div>
-            <div class="logo">
-                <img class="logo_img"
-                     src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Emblem_of_Kyrgyzstan.svg/1024px-Emblem_of_Kyrgyzstan.svg.png"
-                     alt="KG">
-            </div>
-            <div class="text_footer">© 2025 Nurs. Все права защищены.</div>
-        </div>
+            <div class="text_footer">© 2025 Nurs | Бардык укуктар корголгон. </div>
     </footer>
 </div>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>

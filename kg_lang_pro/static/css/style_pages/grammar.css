@@ -1,34 +1,34 @@
 .container_grammar {
-    width: 96%;
+    width: 100%;
     margin: 10px auto;
     height: 100%;
     overflow: hidden;
-    background: #5D0000;
-    box-shadow: 0 0 10px black;
-    border-radius: 10px;
+    box-shadow: 0 0 10px black inset;
 }
-.container_grammar_block{
+
+.container_grammar_block {
     width: 98%;
     height: 80px;
     background: #3F0000;
     margin: 20px auto;
-    box-shadow: 0 0 10px;
+    box-shadow: 0 0 3px inset;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-.title_grammar{
+
+.title_grammar {
     padding: 20px;
     font-size: 25px;
     color: white;
-    font-family: "Playfair", serif;
     height: 100%;
     width: 90%;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
 }
-.button_grammar{
+
+.button_grammar {
     width: 80px;
     height: 50px;
     background: #a41515;
@@ -37,26 +37,56 @@
     justify-content: center;
     font-size: 25px;
     color: white;
-    margin: 0 10px 0 0 ;
-    border-radius: 10px;
+    margin: 0 10px 0 0;
+    border-radius: 3px;
     box-shadow: 0 0 10px black;
     cursor: pointer;
 }
 
-.grammar_description{
+.grammar_description {
     width: 98%;
     height: 100%;
     background: #3F0000;
     margin: 20px auto;
-    box-shadow: 0 0 10px black;
+    box-shadow: 0 0 5px black inset;
     padding: 10px;
     color: white;
     font-size: 20px;
-    border-radius: 10px;
+    border-radius: 3px;
     display: block;
+    font-family: "Roboto", serif;
 }
-
 
 .hidden {
     display: none !important;
+}
+
+@media (max-width: 480px) {
+    .container_grammar_block {
+        width: 95%;
+        height: 40px;
+        margin: 10px auto;
+    }
+
+    .title_grammar {
+        padding: 10px;
+        font-size: 16px;
+        width: 80%;
+    }
+
+    .button_grammar {
+        width: 50px;
+        height: 30px;
+        font-size: 18px;
+        margin: 0 10px 0 0;
+        border-radius: 3px;
+        box-shadow: 0 0 5px black;
+    }
+
+    .grammar_description {
+        margin: 10px auto;
+        color: white;
+        font-size: 16px;
+        width: 95% !important;
+    }
 }

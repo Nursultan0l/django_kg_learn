@@ -50,7 +50,7 @@
 
 .letter_alphabet {
     color: white;
-    font-family: "Playfair", serif;
+    font-family: "Poppins", serif;
     font-size: 55px;
     font-weight: bold;
 }
@@ -78,4 +78,51 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+
+@media (max-width: 480px) {
+    .alphabet_container {
+        margin: 10px auto;
+        box-shadow: 0 0 5px black inset;
+        grid-template-columns: auto auto auto;
+        border-radius: 5px;
+    }
+
+    .container_grid {
+        width: 100px;
+        height: 100px;
+        box-shadow: 0 0 5px black;
+        margin: 10px auto;
+        border-radius: 5px 5px 40px 5px;
+        transition: 0.2s ease;
+    }
+
+    .container_grid:hover {
+        text-shadow: 0 0 5px white;
+    }
+
+    .voice_alphabet {
+        width: 100%;
+        height: 50px;
+    }
+
+    .image_alphabet {
+        width: 30px;
+        height: 30px;
+        margin: 10px;
+    }
+
+    .letter_alphabet {
+        font-size: 25px;
+    }
+
+    .voice_letter {
+        width: 30px;
+        height: 30px;
+        font-size: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 5px black;
+    }
+
 }

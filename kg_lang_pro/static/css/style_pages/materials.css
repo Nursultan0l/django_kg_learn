@@ -81,6 +81,73 @@
     box-shadow: 0 0 10px black;
     transition: 0.3s ease;
 }
-.download_file:hover{
+
+.download_file:hover {
     background: #720d0d;
+}
+
+@media (max-width: 480px) {
+    .container_materials {
+        height: 70%;
+        background: #3F0000;
+    }
+
+    .container_grid {
+        width: 340px;
+        display: grid;
+        grid-template-columns: auto;
+        grid-gap: 10px;
+        padding: 10px;
+        margin: auto;
+    }
+
+    .materials_file {
+        border-radius: 5px;
+        box-shadow: 0 0 5px black;
+        padding: 3px;
+        width: 310px;
+        height: 100px;
+        justify-content: space-around;
+    }
+
+    .material_text_description {
+        width: 180px;
+    }
+
+    .material_icon_button {
+        width: 80px;
+    }
+
+    .title_material_file {
+        width: 100%;
+        height: 40px;
+        font-size: 16px;
+        color: white;
+        padding: 5px 0;
+    }
+
+    .description_material_file {
+        max-width: 350px;
+        font-size: 14px;
+        margin: 5px 0 0 0;
+    }
+
+    .download_file {
+        width: 60px;
+        height: 40px;
+        margin: 5px auto;
+        border-radius: 5px;
+        font-size: 20px;
+        box-shadow: 0 0 5px black;
+
+    }
+
+    .icon_material {
+        color: white;
+        font-size: 25px;
+        width: 100%;
+        height: 40px;
+    }
+
+
 }
